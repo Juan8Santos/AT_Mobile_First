@@ -1,0 +1,31 @@
+.caixa > img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.containerCaixas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.containerAdicionarCaixas {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.containerAdicionarCaixas button {
+    padding: 10px 18px;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(var(--cor-azul-claro), var(--cor-azul-escuro));
+    color: var(--cor-branco);
+    border: 0;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
