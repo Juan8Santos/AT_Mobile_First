@@ -1,0 +1,83 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.header, .globalMenu, .contextMenu, .mainContent, .ads, .footer {
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid #000000;
+}
+
+.divTop {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.header { 
+    background: #1abc9c;
+    grid-area: header;
+    flex: 1;
+}
+
+.globalMenu { 
+    background: #3498db;
+    grid-area: globalMenu;
+    flex: 2;
+}
+
+.contextMenu { 
+    background: #9b59b6;
+    grid-area: contextMenu;
+}
+
+.mainContent { 
+    background: #2ecc71;
+    grid-area: mainContent;
+    height: 400px;
+}
+
+.ads { 
+    background: #f39c12;
+    grid-area: ads;
+    height: 300px;
+}
+
+.footer { 
+    background: #e74c3c;
+    grid-area: footer;
+}
+
+@media (min-width: 1024px) {
+
+    .container {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "globalMenu globalMenu ads"
+          "contextMenu mainContent ads"
+          "footer footer footer";
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr;
+        gap: 10px;
+    }
+
+    .mainContent, .ads {
+        height: auto;
+    }
+
+    .divTop {
+        display: contents;
+    }
+
+    .header { grid-area: header; }
+    .globalMenu { grid-area: globalMenu; }
+    .contextMenu { grid-area: contextMenu; }
+    .mainContent { grid-area: mainContent; }
+    .ads { grid-area: ads; }
+    .footer { grid-area: footer; }
+}

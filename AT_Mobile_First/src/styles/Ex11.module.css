@@ -1,0 +1,179 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.header, .globalMenu, .contextMenu, .mainContent, .ads, .footer {
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    border-radius: 8px;
+    border: 1px solid #000000;
+}
+
+.divTop {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 10px;
+}
+
+.header { 
+    background: #1abc9c;
+    grid-area: header;
+    flex: 1;
+}
+
+.globalMenu { 
+    background: #3498db;
+    grid-area: globalMenu;
+    flex: 2;
+}
+
+.contextMenu { 
+    background: #9b59b6;
+    grid-area: contextMenu;
+}
+
+.mainContent { 
+    background: #2ecc71;
+    grid-area: mainContent;
+    height: 400px;
+}
+
+.ads { 
+    background: #f39c12;
+    grid-area: ads;
+    height: 300px;
+}
+
+.footer { 
+    background: #e74c3c;
+    grid-area: footer;
+}
+
+@media (min-width: 1024px) {
+
+    .container {
+        display: grid;
+        grid-template-areas:
+          "header header header"
+          "globalMenu globalMenu ads"
+          "contextMenu mainContent ads"
+          "footer footer footer";
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr 1fr;
+        gap: 10px;
+    }
+
+    .mainContent, .ads {
+        height: auto;
+    }
+
+    .divTop {
+        display: contents;
+    }
+
+    .header { grid-area: header; }
+    .globalMenu { grid-area: globalMenu; }
+    .contextMenu { grid-area: contextMenu; }
+    .mainContent { grid-area: mainContent; }
+    .ads { grid-area: ads; }
+    .footer { grid-area: footer; }
+}
+
+/* Parte do navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.imgReact {
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 100px;
+  padding: 5px;
+}
+
+.imgUser {
+  height: 32px;
+  width: 32px;
+}
+
+.btnAlterarMenu {
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  background-color: rgb(202, 214, 89);
+  width: 300px;
+  position: absolute;
+  top: 70px;
+  left: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  text-align: center;
+  padding: 10px;
+  list-style: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+.menu > p {
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.menu a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.active {
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .btnAlterarMenu {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+  }
+
+  .menu li {
+    text-align: center;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 0;
+  }
+
+  .menu > p {
+    display: none;
+  }
+}

@@ -1,10 +1,20 @@
+import Header from "./Header";
+import GlobalMenu from "./GlobalMenu";
+import ContextMenu from "./ContextMenu";
+import MainContent from "./MainContent";
+import Ads from "./Ads";
+import Footer from "./Footer";
+import styles from '../../styles/Ex4.module.css'
 
 export default function Ex4() {
     return (
-        <div className="container-exercicios">
-            <div className="titulo-exercicios">
-                <h1>Exercicio 4</h1>      
-            </div>
-        </div>
+      <div className={styles.container}>
+        <header className={styles.header}><Header /></header>
+        <nav className={styles.globalMenu}><GlobalMenu /></nav>
+        <aside className={styles.contextMenu}><ContextMenu /></aside>
+        <main className={styles.mainContent}><MainContent /></main>
+        <div className={styles.ads}><Ads /></div>
+        <footer className={styles.footer}><Footer /></footer>
+      </div>
     )
 }

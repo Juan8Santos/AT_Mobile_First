@@ -1,0 +1,53 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+.header, .globalMenu, .contextMenu, .mainContent, .ads, .footer {
+  padding: 20px;
+  color: rgb(0, 0, 0);
+  border-radius: 8px;
+  border: 1px solid #000000;
+}
+
+.header { 
+    background: #1abc9c;
+    grid-area: header;
+}
+.globalMenu { 
+    background: #3498db;
+    grid-area: globalMenu;
+}
+.contextMenu { 
+    background: #9b59b6;
+    grid-area: contextMenu;
+}
+.mainContent { 
+    background: #2ecc71;
+    grid-area: mainContent;
+}
+.ads { 
+    background: #f39c12;
+    grid-area: ads;
+}
+.footer { 
+    background: #e74c3c;
+    grid-area: footer;
+}
+
+@media (min-width: 1024px) {
+  .container {
+    display: grid;
+    grid-template-areas:
+      "header header header"
+      "globalMenu globalMenu ads"
+      "contextMenu mainContent ads"
+      "contextMenu mainContent ads"
+      "footer footer footer";
+
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 2fr 1fr;
+  }
+}
