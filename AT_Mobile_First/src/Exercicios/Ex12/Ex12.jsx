@@ -1,9 +1,53 @@
+import {
+  Container,
+  Card,
+  CardContent,
+  Typography,
+  Box,
+  List,
+} from "@mui/material";
+import ProdutoMui from "./ProdutoMui";
+
 export default function Ex12() {
-    return (
-        <div className="container-exercicios">
-            <div className="titulo-exercicios">
-                <h1>Exercicio 12</h1>
-            </div>
-        </div>
-    )
+    const produtos = [
+        { id: 1, nome: 'Sofá 4 Lugares Retrátil', img: 'data:image/jpeg;base64,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',
+            preco: 799.99, quantidade: 1 },
+        { id: 2, nome: 'Poltrona Decorativa 1 lugar', img: 'https://cdn.awsli.com.br/600x1000/1362/1362312/produto/286054986/poltrona-hkqmggzzby.jpg',
+            preco: 459.99, quantidade: 3 },
+        { id: 3, nome: 'Tapete Felpudo 1,90m x 2,00m', img: 'https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQ51eSH7fYc5-A0ASrfQPleQSdVA8Q5lixpUAbJ51yB5GDdlP7e1Q3Nco6vnEOMIx65RTcn-JzDuFa5EfhEwoUtlG7q-XrzNYtpTYhU-E1A&usqp=CAc',
+            preco: 89.99, quantidade: 1 },
+    ]
+
+    function calcularTotalItem(item) {
+        return item.preco * item.quantidade;
+    }
+
+    function calcularTotalCarrinho() {
+        return produtos.reduce((total, item) => total + calcularTotalItem(item), 0);
+    }
+
+  return (
+    <Container maxWidth="lg" sx={{ mt: 4 }}>
+      <Card elevation={3}>
+        <CardContent>
+            <Typography variant="h5" fontWeight="bold">
+                Carrinho de Compras
+            </Typography>
+            <List>
+                {produtos.map((item) => (
+                    <ProdutoMui key={item.id} item={item} calcularTotalItem={calcularTotalItem} />
+                ))}
+            </List>
+            <Box mt={2}>
+                <Typography variant="h6" fontWeight="bold">
+                    Total: R$ {calcularTotalCarrinho().toFixed(2)}
+                </Typography>
+                <Typography color="text.secondary">
+                    itens: {produtos.length}
+                </Typography>
+            </Box>
+        </CardContent>
+      </Card>
+    </Container>
+  );
 }

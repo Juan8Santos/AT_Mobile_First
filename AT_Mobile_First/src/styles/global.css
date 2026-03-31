@@ -5,14 +5,6 @@
   font-style: normal;
 }
 
-:root {
-    --cor-azul-claro: rgb(0, 210, 218);
-    --cor-azul-escuro: rgb(40, 60, 90);
-    --cor-preto: rgb(0, 0, 0);
-    --cor-cinza-claro: rgb(233, 233, 233);
-    --cor-branco: rgb(255, 255, 255);
-}
-
 body {
     min-height: 100vh;
     margin: 0;
