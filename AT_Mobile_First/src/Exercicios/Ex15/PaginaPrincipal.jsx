@@ -5,14 +5,17 @@ import { Container, Grid, Box } from "@mui/material";
 
 export default function PaginaPrincipal({ posts, amigos, sugestoes }) {
   return (
-    <Container maxWidth="lg" sx={{ mt: 10 }}>
+    <Container maxWidth="lg" sx={{ 
+        mt: 10,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+     }}>
       <Header />
-
       <Grid container spacing={2}>
-        <Grid item xs={12} md={6}>
+        <Grid item >
           <Feed posts={posts} />
         </Grid>
-
         <Grid item >
             <Box sx={{
                 display: "flex",
