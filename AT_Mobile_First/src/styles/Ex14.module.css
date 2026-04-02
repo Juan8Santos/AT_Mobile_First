@@ -1,0 +1,303 @@
+:root {
+  --cor-fundo: #ffffff;
+  --cor-texto: #000000;
+  --cor-card: #ffffff;
+  --cor-borda: #cacaca;
+  --cor-sombra: rgba(99, 99, 99, 0.2);
+  --cor-secundaria: #4b4b4b;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cor-fundo: #121212;
+    --cor-texto: #ffffff;
+    --cor-card: #1e1e1e;
+    --cor-borda: #333;
+    --cor-sombra: rgba(0, 0, 0, 0.6);
+    --cor-secundaria: #b0b0b0;
+  }
+}
+
+body {
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: 0.3s;
+}
+
+/* Menu */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.imgReact {
+  height: 40px;
+  width: 40px;
+  border: 1px solid var(--cor-texto);
+  border-radius: 100px;
+  padding: 5px;
+}
+
+.imgUser {
+  height: 32px;
+  width: 32px;
+  border-radius: 100px;
+  object-fit: cover;
+}
+
+.btnAlterarMenu {
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: var(--cor-texto);
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  background-color: var(--cor-card);
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: -40px;
+}
+
+.menu li {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.menu a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.menuUser {
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  background-color: var(--cor-card);
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: -40px;
+}
+
+.menuUser li {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.menuUser a {
+  color: var(--cor-texto);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  display: flex;
+}
+
+@media (min-width: 768px) {
+  .btnAlterarMenu {
+    display: none;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    padding: 0;
+    background-color: transparent;
+  }
+
+  .menu li {
+    text-align: center;
+    padding: 10px;
+    list-style: none;
+    border-bottom: 0;
+  }
+}
+
+/* HomePage */
+
+.homePage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 30px;
+}
+
+.areaCardPostagem {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cardPostagem {
+    border: 1px solid var(--cor-borda);
+    padding: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: var(--cor-sombra) 0px 2px 8px 0px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: var(--cor-card);
+}
+
+.cardPostagem:hover {
+    transform: scale(1.02);
+}
+
+.dataPostagem {
+    padding: 0;
+    margin: 0;
+    margin-top: -4px;
+    font-size: 12px;
+    color: var(--cor-secundaria);
+}
+
+.ConteudoPostagem {
+    color: var(--cor-texto);
+}
+
+@media (min-width: 768px) {
+  .areaCardPostagem {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+  }
+
+  .areaCardPostagem {
+    display: flex;
+    justify-content: center;
+  }
+
+  .cardPostagem {
+    max-width: 300px;
+  }
+}
+
+/* PaginaPost */
+
+.paginaPost {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 10px 30px;
+  gap: 20px;
+}
+
+.alinhamentoPaginaPost {
+  display: flex;
+  justify-content: center;
+}
+
+.cardPost, .cardPostComentar, .listaComentarios {
+  max-width: 768px;
+}
+
+.cardPost {
+  border: 1px solid var(--cor-borda);
+  padding: 10px;
+  box-shadow: var(--cor-sombra) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--cor-card);
+}
+
+.cardPost > h3 {
+  margin-top: 4px;
+}
+
+.cardComentario {
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.listaComentarios {
+  border: 1px solid var(--cor-borda);
+  padding: 10px;
+  box-shadow: var(--cor-sombra) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--cor-card);
+}
+
+.flexComentarioImg {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+}
+
+.flexComentarioImg > img {
+  height: 30px;
+  width: 30px;
+  object-fit: cover;
+  border-radius: 50px;
+}
+
+.cardPostComentar {
+  border: 1px solid var(--cor-borda);
+  padding: 10px;
+  box-shadow: var(--cor-sombra) 0px 2px 8px 0px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background-color: var(--cor-card);
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario > button {
+    padding: 10px 40px;
+    background: var(--cor-texto);
+    font-weight: 700;
+    color: var(--cor-fundo);
+    border: 0;
+    border-radius: 4px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.formulario > button:hover {
+  transform: scale(1.01);
+}
+
+.inputForm {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid var(--cor-borda);
+  border-radius: 4px;
+  margin-bottom: 5px;
+  background-color: var(--cor-card);
+  color: var(--cor-texto);
+}
