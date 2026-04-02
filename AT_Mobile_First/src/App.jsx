@@ -21,7 +21,7 @@ export default function App() {
 }
 
 function SelecaoExercicios() {
-  const ex = 14 // Altere o número para escolher o exercício (1 a 16)
+  const ex = 1 // Altere o número para escolher o exercício (1 a 16)
 
   return (
     <div>

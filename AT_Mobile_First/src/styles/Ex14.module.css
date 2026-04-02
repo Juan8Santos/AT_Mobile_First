@@ -18,10 +18,9 @@
   }
 }
 
-body {
+.containerPrincipal {
   background-color: var(--cor-fundo);
   color: var(--cor-texto);
-  transition: 0.3s;
 }
 
 /* Menu */
